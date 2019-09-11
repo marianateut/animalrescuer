@@ -10,30 +10,32 @@ public class App
     {   Animal animal = new Animal();
         animal.name = "Dog";
         animal.age = 6.00;
-        animal.LevelOfHeath = 5;
-        animal.LevelOfTheFeelingOfHunger = 4;
-        animal.MoodLevel = 2;
-        animal.FavoritFoodNames = "Royal Canin";
-        animal.FavoritRecreationalNames = "Run";
+        animal.levelOfHeath = 5;
+        animal.levelOfTheFeelingOfHunger = 4;
+        animal.moodLevel = 2;
+        animal.favoritFoodNames = "Royal canin";
+        animal.favoritRecreationalNames = "Run";
 
         System.out.println(animal.name);
         System.out.println(animal.age);
-        System.out.println(animal.LevelOfHeath);
-        System.out.println(animal.LevelOfTheFeelingOfHunger);
-        System.out.println(animal.MoodLevel);
-        System.out.println(animal.FavoritFoodNames);
-        System.out.println(animal.FavoritRecreationalNames);
+        System.out.println(animal.levelOfHeath);
+        System.out.println(animal.levelOfTheFeelingOfHunger);
+        System.out.println(animal.moodLevel);
+        System.out.println(animal.favoritFoodNames);
+        System.out.println(animal.favoritRecreationalNames);
 
         Animal animal2 = new Animal();
-        animal.name = "Cat";
-        animal.age = 5.00;
-        animal.LevelOfHeath = 2;
-        animal.LevelOfTheFeelingOfHunger = 7;
-        animal.MoodLevel = 5;
-        animal.FavoritFoodNames = "Royal ";
-        animal.FavoritRecreationalNames = "Game";
+        animal2.name = "Cat";
+        animal2.age = 5.00;
+        animal2.levelOfHeath = 2;
+        animal2.levelOfTheFeelingOfHunger = 7;
+        animal2.moodLevel = 5;
+        animal2.favoritFoodNames = "Royal ";
+        animal2.favoritRecreationalNames = "Game";
+
 
         System.out.println("animal2.name:" + "animal.name");
+        System.out.println("Animal1 name:" + "Animal.name");
 
 
 
