@@ -4,7 +4,7 @@ public class AnimalFood {
     String name;
     Double price;
     Double quantity;
-    int expiryDate;
+    char expiryDate;
     boolean availabilityInStock;
 
 

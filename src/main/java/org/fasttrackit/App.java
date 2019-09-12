@@ -13,7 +13,7 @@ public class App
         animal.levelOfHeath = 5;
         animal.levelOfTheFeelingOfHunger = 4;
         animal.moodLevel = 2;
-        animal.favoritFoodNames = "Royal canin";
+        animal.favoritFoodNames = "Royal dog";
         animal.favoritRecreationalNames = "Run";
 
         System.out.println(animal.name);
@@ -34,8 +34,8 @@ public class App
         animal2.favoritRecreationalNames = "Game";
 
 
-        System.out.println("animal2.name:" + "animal.name");
-        System.out.println("Animal1 name:" + "Animal.name");
+        System.out.println("animal2.name:" + animal2.name);
+        System.out.println("Animal1 name:" + animal.name);
 
 
 
