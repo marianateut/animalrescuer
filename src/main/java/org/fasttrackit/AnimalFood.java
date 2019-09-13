@@ -4,8 +4,9 @@ public class AnimalFood {
     String name;
     Double price;
     Double quantity;
-    char expiryDate;
+
     boolean availabilityInStock;
+
 
 
 }
