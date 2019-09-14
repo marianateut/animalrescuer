@@ -62,6 +62,15 @@ public class App
         veterinarian.specialization = " assistant";
         System.out.println(veterinarian.name);
         System.out.println("Veterinarian specialization: " + veterinarian.specialization);
+
+        Game game = new Game();
+        game.animal = " ball game ";
+        game.rescuer = " girl ";
+        game.vet = " consultation heart";
+        System.out.println(game.animal);
+        System.out.println(game.rescuer);
+        System.out.println(game.vet);
+
         return;
 
 
