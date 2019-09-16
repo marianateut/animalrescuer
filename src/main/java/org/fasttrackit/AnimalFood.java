@@ -1,14 +1,13 @@
 package org.fasttrackit;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.time.LocalDate;
 
 public class AnimalFood {
     String name;
     Double price;
 
 
-    String  data = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+    LocalDate data;
     boolean availabilityInStock;
 
 
