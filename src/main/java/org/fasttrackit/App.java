@@ -8,6 +8,8 @@ import java.time.LocalDate;
 public class App {
     public static void main(String[] args) {
 
+
+
         AnimalFood animalFood = new AnimalFood();
 
         animalFood.name = " royal Dog ";
@@ -66,7 +68,21 @@ public class App {
         veterinarian.specialization = " assistant";
         System.out.println(veterinarian.name);
         System.out.println("Veterinarian specialization: " + veterinarian.specialization);
+        Animal a [] = new Animal[2];
 
+        a[0] = new Dog();
+        a[1] = new Snake();
+
+        for (int i = 0; i < a.length; i++) {
+            a[i].eat();
+
+            // acum că ele sunt numite la fel, putem apela metoda action
+            // din clasa Animal (observați de ce a fost nevoie să definim
+            // metoda action în clasa Animal), iar metoda corespunzătoare
+            // va fi apelată pentru tipul specific al instanței a[i]
+
+            a[i].action();
+        }
 
 
 
