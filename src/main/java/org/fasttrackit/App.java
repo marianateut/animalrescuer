@@ -6,85 +6,83 @@ import java.time.LocalDate;
  * Hello world!
  */
 public class App {
+
     public static void main(String[] args) {
-
-
 
         AnimalFood animalFood = new AnimalFood();
 
-        animalFood.name = " royal Dog ";
-        animalFood.price = 57.02;
-        animalFood.data = LocalDate.of(2019,9,16) ;
-        animalFood.availabilityInStock = true;
-        System.out.println(animalFood.name);
-        System.out.println(animalFood.price);
-        System.out.println(animalFood.data);
+        animalFood.setName("royal dog");
+        animalFood.setPrice(57.02);
+        animalFood.setData(LocalDate.of(2019, 9, 16));
+        animalFood.setAvailabilityInStock(true);
+        System.out.println(animalFood.getName());
+        System.out.println(animalFood.getPrice());
+        System.out.println(animalFood.getData());
+
 
 
         Animal animal = new Animal();
 
-        animal.name = "Dog";
-        animal.age = 6.00;
-        animal.levelOfHeath = 5;
-        animal.levelOfTheFeelingOfHunger = 4;
-        animal.moodLevel = 2;
-        animal.favoritFoodNames = "Royal dog";
-        animal.favoritRecreationalNames = "Run";
+        animal.setName("dog");
+        animal.setAge(6.00);
+        animal.setLevelOfHeath(5);
+        animal.setLevelOfTheFeelingOfHunger(4);
+        animal.setMoodLevel(2);
+        animal.setFavoritFoodNames("royal dog");
+        animal.setFavoritRecreationalNames("run");
 
-        System.out.println(animal.name);
-        System.out.println(animal.age);
-        System.out.println(animal.levelOfHeath);
-        System.out.println(animal.levelOfTheFeelingOfHunger);
-        System.out.println(animal.moodLevel);
-        System.out.println(animal.favoritFoodNames);
-        System.out.println(animal.favoritRecreationalNames);
+        System.out.println(animal.getName());
+        System.out.println(animal.getAge());
+        System.out.println(animal.getLevelOfHeath());
+        System.out.println(animal.getLevelOfTheFeelingOfHunger());
+        System.out.println(animal.getMoodLevel());
+        System.out.println(animal.getFavoritFoodNames());
+        System.out.println(animal.getFavoritRecreationalNames());
 
         Animal animal2 = new Animal();
 
-        animal2.name = "Cat";
-        animal2.age = 5.00;
-        animal2.levelOfHeath = 2;
-        animal2.levelOfTheFeelingOfHunger = 7;
-        animal2.moodLevel = 5;
-        animal2.favoritFoodNames = "Royal ";
-        animal2.favoritRecreationalNames = "ball Game";
+        animal2.setName("cat");
+        animal2.setAge(5.00);
+        animal2.setLevelOfHeath(2);
+        animal2.setLevelOfTheFeelingOfHunger(7);
+        animal2.setMoodLevel(5);
+        animal2.setFavoritFoodNames("royal");
+        animal2.setFavoritRecreationalNames("ball game");
 
 
-        System.out.println("animal2.name:" + animal2.name);
-        System.out.println("Animal1 name:" + animal.name);
+        System.out.println("animal2.name:" + animal2.getName());
+        System.out.println("Animal1 name:" + animal.getName());
 
         AnimalRescuer animalRescuer = new AnimalRescuer();
-        animalRescuer.name = " Girl";
-        animalRescuer.amountOfMoney = 50.00;
-        System.out.println(animalRescuer.name);
-        System.out.println(animalRescuer.amountOfMoney);
+        animalRescuer.setName("girl");
+        animalRescuer.setAmountOfMoney(50.00);
+        System.out.println(animalRescuer.getName());
+        System.out.println(animalRescuer.getAmountOfMoney());
 
-        RecreationActivity recreationActivity = new RecreationActivity();
-        recreationActivity.name = "ball game";
-        System.out.println(recreationActivity.name);
+        //  RecreationActivity recreationActivity = new RecreationActivity();
+        // recreationActivity.setRecreationActivityName("ball game");
+        // System.out.println(recreationActivity.setRecreationActivityName());
 
         Veterinarian veterinarian = new Veterinarian();
-        veterinarian.name = "medic";
-        veterinarian.specialization = " assistant";
-        System.out.println(veterinarian.name);
-        System.out.println("Veterinarian specialization: " + veterinarian.specialization);
-        Animal a [] = new Animal[2];
+        veterinarian.setName("medic");
+        veterinarian.setSpecialization("assistant");
+        System.out.println(veterinarian.getName());
+        System.out.println("Veterinarian specialization: " + veterinarian.getSpecialization());
+       // Animal a[] = new Animal[2];
 
-        a[0] = new Dog();
-        a[1] = new Snake();
+       // a[0] = new Dog();
+      //  a[1] = new Snake();
 
-        for (int i = 0; i < a.length; i++) {
-            a[i].eat();
+     //   for (int i = 0; i < a.length; i++) {
+    //        a[i].eat();
 
             // acum că ele sunt numite la fel, putem apela metoda action
             // din clasa Animal (observați de ce a fost nevoie să definim
             // metoda action în clasa Animal), iar metoda corespunzătoare
             // va fi apelată pentru tipul specific al instanței a[i]
 
-            a[i].action();
-        }
-
-
+       //     a[i].action();
+       // }
 
 
     }
