@@ -1,5 +1,7 @@
 package org.fasttrackit;
 
+
+
 import java.time.LocalDate;
 
 /**
@@ -9,7 +11,31 @@ public class App {
 
     public static void main(String[] args) {
 
-        AnimalFood animalFood = new AnimalFood();
+            AnimalRescuer animalRescuer = new AnimalRescuer();
+            animalRescuer.setName("John");
+
+            AnimalFood animalFood = new AnimalFood();
+            animalFood.setName("Purina");
+
+            Animal firstAnimal = new Animal();
+            firstAnimal.setName("Chaika");
+
+
+            System.out.println(animalRescuer.getName() + " " +"just give some" + " " + animalFood.getName() +
+                    " " + "to" + " " + firstAnimal.toString());
+
+
+           /* animalRescuer.feedAnimal("dog","purina");
+        {
+            System.out.println( );
+        }
+        animalRescuer.recreationGame("run","dog");{
+            System.out.println();
+        }
+*/
+
+
+      /*  AnimalFood animalFood = new AnimalFood();
 
         animalFood.setName("royal dog");
         animalFood.setPrice(57.02);
@@ -17,13 +43,13 @@ public class App {
         animalFood.setAvailabilityInStock(true);
         System.out.println(animalFood.getName());
         System.out.println(animalFood.getPrice());
-        System.out.println(animalFood.getData());
+        System.out.println(animalFood.getData()); */
 
 
 
         Animal animal = new Animal();
 
-        animal.setName("dog");
+        animal.setName("Chaika");
         animal.setAge(6.00);
         animal.setLevelOfHeath(5);
         animal.setLevelOfTheFeelingOfHunger(4);
@@ -39,6 +65,7 @@ public class App {
         System.out.println(animal.getFavoritFoodNames());
         System.out.println(animal.getFavoritRecreationalNames());
 
+
         Animal animal2 = new Animal();
 
         animal2.setName("cat");
@@ -53,11 +80,11 @@ public class App {
         System.out.println("animal2.name:" + animal2.getName());
         System.out.println("Animal1 name:" + animal.getName());
 
-        AnimalRescuer animalRescuer = new AnimalRescuer();
+     /* AnimalRescuer animalRescuer = new AnimalRescuer();
         animalRescuer.setName("girl");
         animalRescuer.setAmountOfMoney(50.00);
         System.out.println(animalRescuer.getName());
-        System.out.println(animalRescuer.getAmountOfMoney());
+        System.out.println(animalRescuer.getAmountOfMoney());*/
 
         //  RecreationActivity recreationActivity = new RecreationActivity();
         // recreationActivity.setRecreationActivityName("ball game");
@@ -68,21 +95,25 @@ public class App {
         veterinarian.setSpecialization("assistant");
         System.out.println(veterinarian.getName());
         System.out.println("Veterinarian specialization: " + veterinarian.getSpecialization());
-       // Animal a[] = new Animal[2];
 
-       // a[0] = new Dog();
-      //  a[1] = new Snake();
+        Animal a[] = new Animal[2];
 
-     //   for (int i = 0; i < a.length; i++) {
-    //        a[i].eat();
+        a[0] = new Dog();
+        a[1] = new Snake();
+
+       for (int i = 0; i < a.length; i++) {
+           a[i].eat();
 
             // acum că ele sunt numite la fel, putem apela metoda action
             // din clasa Animal (observați de ce a fost nevoie să definim
             // metoda action în clasa Animal), iar metoda corespunzătoare
             // va fi apelată pentru tipul specific al instanței a[i]
 
-       //     a[i].action();
-       // }
+            a[i].action();
+
+
+        }
+
 
 
     }

@@ -1,14 +1,15 @@
 package org.fasttrackit;
 
 public class Animal {
-  private   String name;
-  private Double age;
-  private   int levelOfHeath;
-  private   int levelOfTheFeelingOfHunger;
-  private   int moodLevel;
-  private   String favoritFoodNames;
-  private   String favoritRecreationalNames;
-//getter and setter
+    private String name;
+    private Double age;
+    private int levelOfHeath;
+    private int levelOfTheFeelingOfHunger;
+    private int moodLevel;
+    private String favoritFoodNames;
+    private String favoritRecreationalNames;
+
+    //getter and setter
     public String getName() {
         return name;
     }
@@ -64,6 +65,10 @@ public class Animal {
     public void setFavoritRecreationalNames(String favoritRecreationalNames) {
         this.favoritRecreationalNames = favoritRecreationalNames;
     }
+
+
+
+
 
     @Override
     public int hashCode() {

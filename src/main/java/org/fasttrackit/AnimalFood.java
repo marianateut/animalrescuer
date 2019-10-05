@@ -3,7 +3,8 @@ package org.fasttrackit;
 import java.time.LocalDate;
 
 public class AnimalFood {
-   private String name;
+    public int length;
+    private String name;
    private Double price;
    private LocalDate data;
     private boolean availabilityInStock;
@@ -39,4 +40,5 @@ public class AnimalFood {
     public void setAvailabilityInStock(boolean availabilityInStock) {
         this.availabilityInStock = availabilityInStock;
     }
+
 }
