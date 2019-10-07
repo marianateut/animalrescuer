@@ -8,6 +8,22 @@ public class Animal {
     private int moodLevel;
     private String favoritFoodNames;
     private String favoritRecreationalNames;
+    //constructor
+
+
+   /* public Animal(String name, Double age, int levelOfHeath, int levelOfTheFeelingOfHunger, int moodLevel, String favoritFoodNames, String favoritRecreationalNames) {
+        this.name = name;
+        this.age = age;
+        this.levelOfHeath = levelOfHeath;
+        this.levelOfTheFeelingOfHunger = levelOfTheFeelingOfHunger;
+        this.moodLevel = moodLevel;
+        this.favoritFoodNames = favoritFoodNames;
+        this.favoritRecreationalNames = favoritRecreationalNames;
+    }
+
+    public Animal() {
+
+    }*/
 
     //getter and setter
     public String getName() {

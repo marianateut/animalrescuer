@@ -7,6 +7,8 @@ public class AnimalRescuer {
     private String name;
     private Double amountOfMoney;
 
+
+
     public String getName() {
         return name;
     }

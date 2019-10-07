@@ -9,6 +9,7 @@ public class AnimalFood {
    private LocalDate data;
     private boolean availabilityInStock;
 
+
     public String getName() {
         return name;
     }

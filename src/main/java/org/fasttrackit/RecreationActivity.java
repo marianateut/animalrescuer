@@ -4,6 +4,9 @@ public class RecreationActivity {
     private String RecreationActivityName;
     private boolean fun;
 
+
+
+
     public RecreationActivity(String recreationActivityName) {
         RecreationActivityName = recreationActivityName;
     }

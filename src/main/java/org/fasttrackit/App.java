@@ -25,14 +25,14 @@ public class App {
                     " " + "to" + " " + firstAnimal.toString());
 
 
-           /* animalRescuer.feedAnimal("dog","purina");
+    /*        animalRescuer.feedAnimal("dog","purina");
         {
             System.out.println( );
         }
         animalRescuer.recreationGame("run","dog");{
             System.out.println();
-        }
-*/
+        }*/
+
 
 
       /*  AnimalFood animalFood = new AnimalFood();
@@ -98,8 +98,8 @@ public class App {
 
         Animal a[] = new Animal[2];
 
-        a[0] = new Dog();
-        a[1] = new Snake();
+        a[0] = new Dog("charita");
+        a[1] = new Snake("seic");
 
        for (int i = 0; i < a.length; i++) {
            a[i].eat();
