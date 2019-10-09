@@ -6,6 +6,12 @@ class Dog extends Animal{
     public Dog(String name){
         this.name = name;
     }
+//setter and geter
+
+    @Override
+    public String getName() {
+        return name;
+    }
 
     public void action() {
     System.out.println("Dog howling");
