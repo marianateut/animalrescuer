@@ -10,7 +10,7 @@ public class App {
 
     public static void main(String[] args) {
 
-        Animal animal = new Animal();
+        Animal animal = new Animal("Chaika");
 
         animal.setName("Chaika");
         animal.setAge(6.00);
@@ -29,7 +29,7 @@ public class App {
         System.out.println(animal.getFavoritRecreationalNames());
 
 
-        Animal animal2 = new Animal();
+        Animal animal2 = new Animal("cat");
 
         animal2.setName("cat");
         animal2.setAge(5.00);
@@ -62,7 +62,7 @@ public class App {
         System.out.println(animalFood.getData());
 
 
-        Animal firstAnimal = new Animal();
+        Animal firstAnimal = new Animal("Chaika");
         firstAnimal.setName("Chaika");
 
 
@@ -79,16 +79,16 @@ public class App {
 
          animalRescuer.recreationGame(recreationActivity,animal);
 
-        Veterinarian veterinarian = new Veterinarian();
-        veterinarian.setName("medic");
+        Veterinarian veterinarian = new Veterinarian("Andrei");
+        veterinarian.setName("Andrei");
         veterinarian.setSpecialization("assistant");
         System.out.println(veterinarian.getName());
         System.out.println("Veterinarian specialization: " + veterinarian.getSpecialization());
 
         Animal a[] = new Animal[2];
 
-        a[0] = new Dog();
-        a[1] = new Snake();
+        a[0] = new Dog("tom");
+        a[1] = new Snake("eri");
 
         for (int i = 0; i < a.length; i++) {
             a[i].eat();
