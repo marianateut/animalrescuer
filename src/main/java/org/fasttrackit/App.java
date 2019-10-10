@@ -87,8 +87,8 @@ public class App {
 
         Animal a[] = new Animal[2];
 
-        a[0] = new Dog("charita");
-        a[1] = new Snake("seic");
+        a[0] = new Dog();
+        a[1] = new Snake();
 
         for (int i = 0; i < a.length; i++) {
             a[i].eat();
