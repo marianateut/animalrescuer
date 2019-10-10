@@ -43,14 +43,14 @@ public class App {
         System.out.println("animal2.name:" + animal2.getName());
         System.out.println("Animal1 name:" + animal.getName());
 
-        AnimalRescuer animalRescuer = new AnimalRescuer();
+        AnimalRescuer animalRescuer = new AnimalRescuer("John",50.0);
         animalRescuer.setName("John");
 
         animalRescuer.setAmountOfMoney(50.00);
         System.out.println(animalRescuer.getName());
         System.out.println(animalRescuer.getAmountOfMoney());
 
-        AnimalFood animalFood = new AnimalFood();
+        AnimalFood animalFood = new AnimalFood("purina",57.02);
 
         animalFood.setName("Purina");
 

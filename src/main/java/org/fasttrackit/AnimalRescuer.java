@@ -7,9 +7,14 @@ public class AnimalRescuer {
     public String Name;
     private String name;
     private Double amountOfMoney;
+//constructor
 
+    public AnimalRescuer(String name, Double amountOfMoney) {
+        this.name = name;
+        this.amountOfMoney = amountOfMoney;
+    }
 
-
+    //getter and setter
     public String getName() {
         return name;
     }

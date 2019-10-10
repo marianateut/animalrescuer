@@ -8,8 +8,15 @@ public class AnimalFood {
    private Double price;
    private LocalDate data;
     private boolean availabilityInStock;
+//constructor
 
 
+    public AnimalFood(String name, Double price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    //getter and setter
     public String getName() {
         return name;
     }
