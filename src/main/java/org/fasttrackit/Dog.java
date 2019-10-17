@@ -7,6 +7,12 @@ class Dog extends Animal{
         super(name);
     }
 
+
+    public String positiveMod(){
+
+        return "THe dog gives the tail if";
+    }
+
     public void action() {
     System.out.println("Dog howling");
 }

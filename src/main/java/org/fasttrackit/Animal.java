@@ -15,12 +15,18 @@ public class Animal {
         this.name = name;
     }
 
+    public Animal() {}
+
+   /* public String positiveMood(){
+        return "The animal is happy.";
+    }*/
+
     //getter and setter
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+   public void setName(String name) {
         this.name = name;
     }
 
@@ -107,6 +113,11 @@ public class Animal {
     public void action() {
         // avem nevoie de această metodă deoarece vom crea un vector
         // cu instanțe Animal și vom apela această metodă pe ele
+    }
+
+
+    public String positiveMod() {
+        return "The animal is happy.";
     }
 
 

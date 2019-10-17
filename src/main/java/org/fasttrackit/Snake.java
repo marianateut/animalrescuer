@@ -7,6 +7,12 @@ public class Snake  extends Animal {
         super(name);
     }
 
+
+    public String positiveMod(){
+
+        return "Snake run";
+    }
+
     public void action(){
         System.out.println("Snake biting");
     }

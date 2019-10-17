@@ -85,20 +85,27 @@ public class App {
         System.out.println(veterinarian.getName());
         System.out.println("Veterinarian specialization: " + veterinarian.getSpecialization());
 
+
+
+
+
         Animal a[] = new Animal[2];
 
         a[0] = new Dog("tom");
         a[1] = new Snake("eri");
 
         for (int i = 0; i < a.length; i++) {
-            a[i].eat();
 
+            a[i].eat();
+            System.out.println("positive mood is." + a[i].positiveMod() );
+            a[i].positiveMod();
             // acum că ele sunt numite la fel, putem apela metoda action
             // din clasa Animal (observați de ce a fost nevoie să definim
             // metoda action în clasa Animal), iar metoda corespunzătoare
             // va fi apelată pentru tipul specific al instanței a[i]
 
             a[i].action();
+
 
 
         }
