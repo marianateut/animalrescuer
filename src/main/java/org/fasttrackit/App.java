@@ -12,7 +12,7 @@ public class App {
 
         Animal animal = new Animal("Chaika");
 
-        animal.setName("Chaika");
+       // animal.setName("Chaika");
         animal.setAge(6.00);
         animal.setLevelOfHeath(5);
         animal.setLevelOfTheFeelingOfHunger(4);
@@ -31,7 +31,7 @@ public class App {
 
         Animal animal2 = new Animal("cat");
 
-        animal2.setName("cat");
+       // animal2.setName("cat");
         animal2.setAge(5.00);
         animal2.setLevelOfHeath(2);
         animal2.setLevelOfTheFeelingOfHunger(7);
@@ -44,17 +44,17 @@ public class App {
         System.out.println("Animal1 name:" + animal.getName());
 
         AnimalRescuer animalRescuer = new AnimalRescuer("John",50.0);
-        animalRescuer.setName("John");
+       // animalRescuer.setName("John");
 
-        animalRescuer.setAmountOfMoney(50.00);
+      //  animalRescuer.setAmountOfMoney(50.00);
         System.out.println(animalRescuer.getName());
         System.out.println(animalRescuer.getAmountOfMoney());
 
         AnimalFood animalFood = new AnimalFood("purina",57.02);
 
-        animalFood.setName("Purina");
+        //animalFood.setName("Purina");
 
-        animalFood.setPrice(57.02);
+       // animalFood.setPrice(57.02);
         animalFood.setData(LocalDate.of(2019, 9, 16));
         animalFood.setAvailabilityInStock(true);
         System.out.println(animalFood.getName());
@@ -63,7 +63,7 @@ public class App {
 
 
         Animal firstAnimal = new Animal("Chaika");
-        firstAnimal.setName("Chaika");
+       // firstAnimal.setName("Chaika");
 
 
         System.out.println(animalRescuer.getName() + " " + "just give some" + " " + animalFood.getName() +
@@ -80,7 +80,7 @@ public class App {
          animalRescuer.recreationGame(recreationActivity,animal);
 
         Veterinarian veterinarian = new Veterinarian("Andrei");
-        veterinarian.setName("Andrei");
+       // veterinarian.setName("Andrei");
         veterinarian.setSpecialization("assistant");
         System.out.println(veterinarian.getName());
         System.out.println("Veterinarian specialization: " + veterinarian.getSpecialization());

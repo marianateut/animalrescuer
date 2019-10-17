@@ -26,9 +26,9 @@ public class Animal {
         return name;
     }
 
-   public void setName(String name) {
+ /*  public void setName(String name) {
         this.name = name;
-    }
+    }*/
 
     public Double getAge() {
         return age;
