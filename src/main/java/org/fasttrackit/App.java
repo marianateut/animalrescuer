@@ -87,8 +87,6 @@ public class App {
 
 
 
-
-
         Animal a[] = new Animal[2];
 
         a[0] = new Dog("tom");
@@ -97,7 +95,7 @@ public class App {
         for (int i = 0; i < a.length; i++) {
 
             a[i].eat();
-            System.out.println("positive mood is." + a[i].positiveMod() );
+            System.out.println("positive mood is:" + a[i].positiveMod() );
             a[i].positiveMod();
             // acum că ele sunt numite la fel, putem apela metoda action
             // din clasa Animal (observați de ce a fost nevoie să definim

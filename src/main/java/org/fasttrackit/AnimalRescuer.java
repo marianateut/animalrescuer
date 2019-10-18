@@ -56,7 +56,7 @@ public class AnimalRescuer {
 
     public void recreationGame (RecreationActivity recreationActivity, Animal animal) {
         animal.setLevelOfTheFeelingOfHunger(1);
-        int newLevel = animal.getLevelOfTheFeelingOfHunger() -1;
+        int newLevel = animal.getLevelOfTheFeelingOfHunger() -2;
         int newLevel1 = animal.getLevelOfTheFeelingOfHunger()+1;
         if (recreationActivity.equals(animal.getFavoritRecreationalNames())) {
             System.out.println(name + " has funny " + recreationActivity.getRecreationActivityName() + " with " + animal.getName() +  " new happiness level is: " + newLevel);
