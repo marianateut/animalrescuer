@@ -42,31 +42,31 @@ public class AnimalRescuer {
 
         firstAnimal.setLevelOfTheFeelingOfHunger(4);
         int newLevel = firstAnimal.getLevelOfTheFeelingOfHunger()-1;
-       // if (animalFood.equals(firstAnimal.getFavoritFoodNames())) {
+        if (animalFood.equals(firstAnimal.getFavoritFoodNames())) {
 
 
             System.out.println(name + " just gave some " + animalFood.getName() + " to "  + firstAnimal.getName() + " new happiness state is: " + newLevel);
         }
-      /*  else {
+       else {
             System.out.println(name + " just gave some " + animalFood.getName()+ " to " + firstAnimal.getName() +" happiness state is: " + firstAnimal.getLevelOfTheFeelingOfHunger());
         }
-    }*/
+    }
 
 
 
     public void recreationGame (RecreationActivity recreationActivity, Animal animal) {
         animal.setLevelOfTheFeelingOfHunger(2);
-        int newLevel = animal.getLevelOfTheFeelingOfHunger() + 1;
-       // int newLevel1 = animal.getLevelOfTheFeelingOfHunger()+1;
-      //  if (recreationActivity.equals(animal.getFavoritRecreationalNames())) {
+        int newLevel = animal.getLevelOfTheFeelingOfHunger() +1;
+        int newLevel1 = animal.getLevelOfTheFeelingOfHunger()+2;
+        if (recreationActivity.equals(animal.getFavoritRecreationalNames())) {
             System.out.println(name + " has funny " + recreationActivity.getRecreationActivityName() + " with " + animal.getName() +  " new happiness level is: " + newLevel);
         }
-       /* else {
+        else {
             System.out.println(name + " has funny " + recreationActivity.getRecreationActivityName() + " with " + animal.getName() +  " new happiness level is: " + newLevel1);
         }
 
 
-    }*/
+    }
 
 
 
