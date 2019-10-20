@@ -7,7 +7,7 @@ public class RecreationActivity {
 
 
 
-    public RecreationActivity(String recreationActivityName) {
+   public RecreationActivity(String recreationActivityName) {
         RecreationActivityName = recreationActivityName;
     }
 

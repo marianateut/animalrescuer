@@ -17,7 +17,7 @@ public class App {
         animal.setLevelOfHeath(5);
         animal.setLevelOfTheFeelingOfHunger(4);
         animal.setMoodLevel(2);
-        animal.setFavoritFoodNames("royal dog");
+        animal.setFavoritFoodNames("purina");
         animal.setFavoritRecreationalNames("run");
 
         System.out.println(animal.getName());
