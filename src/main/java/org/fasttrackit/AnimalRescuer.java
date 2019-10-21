@@ -40,14 +40,15 @@ public class AnimalRescuer {
 
     public void feedAnimal (Animal animal, AnimalFood animalFood ) {
 
-        int newLevel = animal.getLevelOfTheFeelingOfHunger()-1;
-        if (animalFood.equals(animal.getFavoritFoodNames())) {
+        int newLevel = animal.getLevelOfTheFeelingOfHunger()+1;
+        int newLevel1 = animal.getLevelOfTheFeelingOfHunger()-1;
 
+        if (animalFood.equals(animal.getFavoritFoodNames())) {
 
             System.out.println(name + " just gave some " + animalFood.getName() + " to "  + animal.getName() + " new happiness state is: " + newLevel);
         }
        else {
-            System.out.println(name + " just gave some " + animalFood.getName()+ " to " + animal.getName() +" happiness state is: " + animal.getLevelOfTheFeelingOfHunger());
+            System.out.println(name + " just gave some " + animalFood.getName()+ " to " + animal.getName() +" happiness state is: " + newLevel1);
         }
     }
 
