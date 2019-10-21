@@ -8,8 +8,8 @@ public class Animal {
     private int moodLevel;
     private String favoritFoodNames;
     private String favoritRecreationalNames;
-    //constructor
 
+    //constructor
 
     public Animal(String name) {
         this.name = name;
@@ -17,18 +17,10 @@ public class Animal {
 
     public Animal() {}
 
-   /* public String positiveMood(){
-        return "The animal is happy.";
-    }*/
-
     //getter and setter
     public String getName() {
         return name;
     }
-
- /*  public void setName(String name) {
-        this.name = name;
-    }*/
 
     public Double getAge() {
         return age;
