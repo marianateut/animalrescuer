@@ -40,29 +40,26 @@ public class AnimalRescuer {
 
     public void feedAnimal (Animal animal, AnimalFood animalFood ) {
 
-        int newLevel = animal.getLevelOfTheFeelingOfHunger()+1;
-        int newLevel1 = animal.getLevelOfTheFeelingOfHunger()-1;
 
         if (animalFood.equals(animal.getFavoritFoodNames())) {
 
-            System.out.println(name + " just gave some " + animalFood.getName() + " to "  + animal.getName() + " new happiness state is: " + newLevel);
+            System.out.println(name + " just gave some " + animalFood.getName() + " to "  + animal.getName() + " new happiness state is: " + (animal.getLevelOfTheFeelingOfHunger()+1));
         }
        else {
-            System.out.println(name + " just gave some " + animalFood.getName()+ " to " + animal.getName() +" happiness state is: " + newLevel1);
+            System.out.println(name + " just gave some " + animalFood.getName()+ " to " + animal.getName() +" happiness state is: " +(animal.getLevelOfTheFeelingOfHunger()-1) );
         }
     }
 
 
 
     public void recreationGame (RecreationActivity recreationActivity, Animal animal) {
-        animal.setLevelOfTheFeelingOfHunger(2);
-        int newLevel = animal.getLevelOfTheFeelingOfHunger() +1;
-        int newLevel1 = animal.getLevelOfTheFeelingOfHunger()+2;
+       // animal.setLevelOfTheFeelingOfHunger(2);
+
         if (recreationActivity.equals(animal.getFavoritRecreationalNames())) {
-            System.out.println(name + " has funny " + recreationActivity.getRecreationActivityName() + " with " + animal.getName() +  " new happiness level is: " + newLevel);
+            System.out.println(name + " has funny " + recreationActivity.getRecreationActivityName() + " with " + animal.getName() +  " new happiness level is: " +(animal.getLevelOfTheFeelingOfHunger() +1));
         }
         else {
-            System.out.println(name + " has funny " + recreationActivity.getRecreationActivityName() + " with " + animal.getName() +  " new happiness level is: " + newLevel1);
+            System.out.println(name + " has funny " + recreationActivity.getRecreationActivityName() + " with " + animal.getName() +  " new happiness level is: " + (animal.getLevelOfTheFeelingOfHunger()+2));
         }
 
 
