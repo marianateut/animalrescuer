@@ -2,6 +2,7 @@ package org.fasttrackit;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Game {
@@ -34,6 +35,18 @@ public class Game {
 
         }
     }
+
+//    private int getAvailFoodCountFromUser() {
+//        System.out.println("please enter number of availfood: ");
+//        Scanner scanner = new Scanner(System.in);
+//        try{
+//            return  scanner.nextInt();
+//        }catch (inputMismachException e){throw new Exception('You entered an invalid number.');
+//        finally{
+//                System.out.println("Finally block is always executer");
+//    }
+
+
     private void initActivities(){
         RecreationActivity recreationActivity1 = new RecreationActivity("Run");
          recreationActivity1.setRecreationActivityName("run");

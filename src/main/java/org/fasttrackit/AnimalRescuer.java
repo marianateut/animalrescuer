@@ -40,8 +40,7 @@ public class AnimalRescuer {
 
     public void feedAnimal (Animal animal, AnimalFood animalFood ) {
 
-
-        if (animalFood.equals(animal.getFavoritFoodNames())) {
+        if(animal.getFavoritFoodNames().equals(animalFood.getName())) {
 
             System.out.println(name + " just gave some " + animalFood.getName() + " to "  + animal.getName() + " new happiness state is: " + (animal.getLevelOfTheFeelingOfHunger()+1));
         }
@@ -55,7 +54,7 @@ public class AnimalRescuer {
     public void recreationGame (RecreationActivity recreationActivity, Animal animal) {
        // animal.setLevelOfTheFeelingOfHunger(2);
 
-        if (recreationActivity.equals(animal.getFavoritRecreationalNames())) {
+        if (animal.getFavoritRecreationalNames().equals(recreationActivity.getRecreationActivityName())) {
             System.out.println(name + " has funny " + recreationActivity.getRecreationActivityName() + " with " + animal.getName() +  " new happiness level is: " +(animal.getLevelOfTheFeelingOfHunger() +1));
         }
         else {
