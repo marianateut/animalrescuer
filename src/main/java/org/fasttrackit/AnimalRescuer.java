@@ -39,29 +39,28 @@ public class AnimalRescuer {
 
 
     public void feedAnimal (Animal animal, AnimalFood animalFood ) {
+        System.out.println(name + " just fed " + animal.getName() + " with " + animalFood.getName());
+        double hungerLevel = animal.getLevelOfTheFeelingOfHunger() - 1;
+        System.out.println(animal.getName() + " 's hunger level is : " + String.format( "%.0f", hungerLevel));
 
-        if(animal.getFavoritFoodNames().equals(animalFood.getName())) {
-
-            System.out.println(name + " just gave some " + animalFood.getName() + " to "  + animal.getName() + " new happiness state is: " + (animal.getLevelOfTheFeelingOfHunger()+1));
-        }
-       else {
-            System.out.println(name + " just gave some " + animalFood.getName()+ " to " + animal.getName() +" happiness state is: " +(animal.getLevelOfTheFeelingOfHunger()-1) );
+        if (animal.getFavoritFoodNames().equals(animalFood.getName())) {
+            double happyLevel = animal.getLevelOfTheFeelingOfHunger() + 1;
+            System.out.println("and happy status is : " + String.format( "%.0f", happyLevel));
         }
     }
 
 
 
     public void recreationGame (RecreationActivity recreationActivity, Animal animal) {
-       // animal.setLevelOfTheFeelingOfHunger(2);
+
+        System.out.println(name + " just played with " + animal.getName() + " with " + recreationActivity.getRecreationActivityName());
+        double hLevel = animal.getLevelOfTheFeelingOfHunger() + 1;
+        System.out.println(animal.getName() + "'s happiness : " + String.format( "%.0f",hLevel));
 
         if (animal.getFavoritRecreationalNames().equals(recreationActivity.getRecreationActivityName())) {
-            System.out.println(name + " has funny " + recreationActivity.getRecreationActivityName() + " with " + animal.getName() +  " new happiness level is: " +(animal.getLevelOfTheFeelingOfHunger() +1));
+            double hLevel2 = animal.getLevelOfTheFeelingOfHunger() + 2;
+            System.out.println("That's " + animal.getName() + " 's favourite activity, happiness : " + String.format( "%.0f", hLevel2));
         }
-        else {
-            System.out.println(name + " has funny " + recreationActivity.getRecreationActivityName() + " with " + animal.getName() +  " new happiness level is: " + (animal.getLevelOfTheFeelingOfHunger()+2));
-        }
-
-
     }
 
 
