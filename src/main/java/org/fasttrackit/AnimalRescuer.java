@@ -54,11 +54,11 @@ public class AnimalRescuer {
     public void recreationGame (RecreationActivity recreationActivity, Animal animal) {
         System.out.println(name + " has funny " + recreationActivity.getRecreationActivityName() + " with " + animal.getName());
 
-        double hLevel = animal.getLevelOfTheFeelingOfHunger() + 1;
+        double hLevel = animal.getMoodLevel() + 1;
         System.out.println(animal.getName() + "'s happiness : " + String.format( "%.0f",hLevel));
 
         if (animal.getFavoritRecreationalNames().equals(recreationActivity.getRecreationActivityName())) {
-            double hLevel2 = animal.getLevelOfTheFeelingOfHunger() + 2;
+            double hLevel2 = animal.getMoodLevel()+2;
             System.out.println("That's " + animal.getName() + " 's favourite activity, happiness : " + String.format( "%.0f", hLevel2));
         }
     }
