@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Game {
     AnimalRescuer rescuer;
@@ -26,7 +27,7 @@ public class Game {
         initActivities();
        // displayAvailableFoods();
         displayActivities();
-     // requireFeeding();
+      requireFeeding();
         requireActivity( );}
 
     private String getSelectedAnimalRescuerFromUser() {
@@ -81,7 +82,7 @@ public class Game {
     private void initAnimal(int animalsCount) {
         for (int i = 0; i < animalsCount; i++) {
             Animal animal = new Animal();
-            Animal dog = new Animal(getAnimalNameFromUser());
+            Animal dog = new Animal( getAnimalNameFromUser());
             animal.setAge(2.0);
             animal.setLevelOfHeath(9);
             animal.setLevelOfTheFeelingOfHunger( 10);
@@ -99,20 +100,20 @@ public class Game {
         System.out.println("Choose a type of food by number : ");
         initFoods();
         displayAvailableFoods();
-        Scanner scanner = new Scanner(System.in);
-        for (AnimalFood animalFood : availableFoods) {
+        Scanner scanner = new Scanner(System.in);for(AnimalRescuer animalRescuer:availableRescuers){
+        for( AnimalFood animalFood:availableFoods){for(Animal animal:availableAnimals){
           try {
               int foodNumberFromUser = scanner.nextInt();
 
               System.out.println("Selected food :" + foodNumberFromUser);
-              rescuer.feedAnimal(animal, animalFood);
+              animalRescuer.feedAnimal(animal,animalFood);
           }catch(ArrayIndexOutOfBoundsException | InputMismatchException exception){
                 System.out.println("Invalid food number !");
 
                    requireFeeding();
                 }
             }
-    }
+    }}}
     private void requireActivity() {
         System.out.println("Your animal is unhappy, please play with him.");
         System.out.println("Choose an activity by number : ");
@@ -139,9 +140,9 @@ public class Game {
         System.out.println("Today's available foods is:");
         for (int i = 0; i < availfoodCount; i++) {
             AnimalFood availFood = new AnimalFood();
-            availFood.setName("availfood: " + i);
-            //food.setPrice(ThreadLocalRandom.current().nextDouble(23));
-
+            availFood.setName( "purina" + i);
+//            availFood.setPrice(ThreadLocalRandom.current().nextDouble(23));
+//            availFood.isAvailabilityInStock();
             System.out.println(availFood);
 
             availableFoods.add(availFood);
@@ -176,10 +177,10 @@ public class Game {
         System.out.println("Available foods are:");
         for(AnimalFood availFood: availableFoods){
             if(availFood.getName()!=null){
-                System.out.println(availFood.getName());}
+                System.out.println(availFood.getName()) ;
         }
     }
-
+}
     private void displayActivities() {
         System.out.println("Available activities:");
         for (int j = 0; j < availableActivities.length; j++) {

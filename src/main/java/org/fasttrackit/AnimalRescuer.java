@@ -39,7 +39,7 @@ public class AnimalRescuer {
 
 
     public void feedAnimal (Animal animal, AnimalFood animalFood ) {
-        System.out.println(name + " just fed " + animal.getName() + " with " + animalFood.getName());
+        System.out.println(name + " just gave some " + animalFood.getName() + " to "  + animal.getName());
         double hungerLevel = animal.getLevelOfTheFeelingOfHunger() - 1;
         System.out.println(animal.getName() + " 's hunger level is : " + String.format( "%.0f", hungerLevel));
 
@@ -52,8 +52,8 @@ public class AnimalRescuer {
 
 
     public void recreationGame (RecreationActivity recreationActivity, Animal animal) {
+        System.out.println(name + " has funny " + recreationActivity.getRecreationActivityName() + " with " + animal.getName());
 
-        System.out.println(name + " just played with " + animal.getName() + " with " + recreationActivity.getRecreationActivityName());
         double hLevel = animal.getLevelOfTheFeelingOfHunger() + 1;
         System.out.println(animal.getName() + "'s happiness : " + String.format( "%.0f",hLevel));
 
