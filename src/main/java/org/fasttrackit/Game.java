@@ -19,16 +19,39 @@ public class Game {
 
 
     public void start() throws Exception {
-       // initFoods();
+        System.out.println("***Welcome to AnimalRescuer***");
+        // initFoods();
         String selectedAnimalRescuer = getSelectedAnimalRescuerFromUser();
         initRescuer(1);
         initAnimal(1);
 
-        initActivities();
-       // displayAvailableFoods();
-        displayActivities();
-      requireFeeding();
-        requireActivity( );}
+        // initActivities();
+        // displayAvailableFoods();
+        // displayActivities();
+//        requireFeeding();
+//        requireActivity();
+
+           boolean winnerNotKnown=true;
+
+           while (winnerNotKnown){
+               System.out.println("New round.../n");
+          for (AnimalRescuer rescuer:availableRescuers){
+            for (Animal animal : availableAnimals) {
+                System.out.println("It's " + animal.getName() + "'s turn.");
+
+              if( (animal.getLevelOfTheFeelingOfHunger() > 0) && (animal.getMoodLevel() <= 10)) {
+                  requireFeeding();
+                  requireActivity();
+              winnerNotKnown=false;
+                  System.out.println(("the winner is: "+ rescuer.getName()));
+              break;}
+                  System.out.println("Your animal is fed now and is happy, you won !");
+                  }
+              }}
+
+           }
+
+
 
     private String getSelectedAnimalRescuerFromUser() {
         System.out.println("Please enter a name for your rescuer :");
@@ -45,7 +68,7 @@ public class Game {
     private void initRescuer(int rescuersCount) {
         for (int i = 0; i < rescuersCount; i++) {
             AnimalRescuer rescuer = new AnimalRescuer(getSelectedAnimalRescuerFromUser(), 2.00);
-                 getAnimalFromUser();
+            getAnimalFromUser();
             System.out.println("Available Amount Of Money :" + String.format("%.0f", rescuer.getAmountOfMoney()));
             availableRescuers.add(rescuer);
         }
@@ -66,7 +89,7 @@ public class Game {
     }
         private String getAnimalNameFromUser() {
             System.out.println("Please select a name for your pet");
-//        log.print("Please select a name for your pet : add input in same line");
+
             Scanner scanner = new Scanner(System.in);
               String animalNameFromUser = scanner.nextLine();
             if (!animalNameFromUser.isEmpty()) {
@@ -81,17 +104,18 @@ public class Game {
 
     private void initAnimal(int animalsCount) {
         for (int i = 0; i < animalsCount; i++) {
-            Animal animal = new Animal();
-            Animal dog = new Animal( getAnimalNameFromUser());
+            Animal animal = new Animal(getAnimalNameFromUser());
+            Animal dog = new Animal();
             animal.setAge(2.0);
-            animal.setLevelOfHeath(9);
-            animal.setLevelOfTheFeelingOfHunger( 10);
+            animal.setLevelOfHeath(2);
+            animal.setLevelOfTheFeelingOfHunger( 3);
             animal.setFavoritFoodNames("purina");
-            animal.setFavoritRecreationalNames("walk");
-            animal.setMoodLevel(2);
-            System.out.println(dog);
+            animal.setFavoritRecreationalNames("run");
+            animal.setMoodLevel(9);
+           System.out.println(dog);
 
             availableAnimals.add(animal);
+
         }
     }
 
@@ -100,20 +124,24 @@ public class Game {
         System.out.println("Choose a type of food by number : ");
         initFoods();
         displayAvailableFoods();
-        Scanner scanner = new Scanner(System.in);for(AnimalRescuer animalRescuer:availableRescuers){
-        for( AnimalFood animalFood:availableFoods){for(Animal animal:availableAnimals){
-          try {
+        Scanner scanner = new Scanner(System.in);
+        for(AnimalRescuer animalRescuer:availableRescuers){
+          for( AnimalFood animalFood:availableFoods){
+            for(Animal animal:availableAnimals){
+              try {
               int foodNumberFromUser = scanner.nextInt();
 
               System.out.println("Selected food :" + foodNumberFromUser);
               animalRescuer.feedAnimal(animal,animalFood);
-          }catch(ArrayIndexOutOfBoundsException | InputMismatchException exception){
+                  } catch(ArrayIndexOutOfBoundsException | InputMismatchException exception){
                 System.out.println("Invalid food number !");
 
                    requireFeeding();
                 }
             }
-    }}}
+          }
+        }
+    }
     private void requireActivity() {
         System.out.println("Your animal is unhappy, please play with him.");
         System.out.println("Choose an activity by number : ");
@@ -139,15 +167,22 @@ public class Game {
         int availfoodCount = getAvailFoodCountFromUser();
         System.out.println("Today's available foods is:");
         for (int i = 0; i < availfoodCount; i++) {
-            AnimalFood availFood = new AnimalFood();
-            availFood.setName( "purina" + i);
-//            availFood.setPrice(ThreadLocalRandom.current().nextDouble(23));
-//            availFood.isAvailabilityInStock();
-            System.out.println(availFood);
+//            AnimalFood animalFood = new AnimalFood();
+//            animalFood.setName("purina");
+            AnimalFood animalFood1 = new AnimalFood();
+            animalFood1.setName("purina");
+            AnimalFood animalFood2 = new AnimalFood();
+            animalFood2.setName("Cat Food");
 
-            availableFoods.add(availFood);
+            System.out.println(animalFood1);
+            System.out.println(animalFood2);
 
-        }
+//            availableFoods.add(animalFood);
+            availableFoods.add(animalFood1);
+            availableFoods.add(animalFood2);
+//            animalFood.setPrice(ThreadLocalRandom.current().nextDouble(23));
+//            animalFood.isAvailabilityInStock();
+                   }
     }
 
     private int getAvailFoodCountFromUser() throws Exception {
@@ -174,10 +209,10 @@ public class Game {
 
     }
     private void displayAvailableFoods(){
-        System.out.println("Available foods are:");
-        for(AnimalFood availFood: availableFoods){
-            if(availFood.getName()!=null){
-                System.out.println(availFood.getName()) ;
+        System.out.println("Available animalFoods are:");
+        for(AnimalFood animalFood: availableFoods){
+            if(animalFood.getName()!=null){
+                System.out.println(animalFood.getName()) ;
         }
     }
 }

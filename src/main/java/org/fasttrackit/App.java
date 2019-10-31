@@ -11,7 +11,7 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         Game game = new Game();
-        game.start();
+           game.start();
 
 //       Animal animal = new Animal("Chaika");
 //
@@ -103,6 +103,6 @@ public class App {
 //
 //        }
 //
-//
+
    }
 }
