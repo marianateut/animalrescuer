@@ -108,8 +108,16 @@ public class Animal {
     }
 
 
-    public String positiveMod() {
-        return "The animal is happy.";
+    public void positiveMod() {
+        if(moodLevel>4)
+
+            System.out.println(getName()+ " is happy");
+
+        else
+
+            System.out.println(getName() + " is sad");
+
+    //return "The animal is happy.";
     }
 
 

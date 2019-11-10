@@ -7,11 +7,15 @@ class Dog extends Animal{
         super(name);
     }
 
+    @Override
+    public void positiveMod() {
+        if (getMoodLevel()>4 )
+                System.out.println(getName()+ " is happy, it wags his tail");
+            else
+                System.out.println(getName()+ " is sad, it sleeps all day");
 
-    public String positiveMod(){
-
-        return "THe dog gives the tail if";
-    }
+//       return "THe dog gives the tail if";
+  }
 
     public void action() {
     System.out.println("Dog howling");
