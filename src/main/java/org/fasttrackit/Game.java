@@ -8,6 +8,8 @@ import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.regex.Pattern;
 
+
+
 public class Game {
     AnimalRescuer rescuer;
     Animal animal;
@@ -24,8 +26,7 @@ public class Game {
         String selectedAnimalRescuer = getSelectedAnimalRescuerFromUser();
         initRescuer(1);
         initAnimal(1);
-        //initFoods();
-
+        // initFoods();
         // initActivities();
         // displayAvailableFoods();
         // displayActivities();
@@ -78,6 +79,7 @@ public class Game {
             AnimalRescuer rescuer = new AnimalRescuer(getSelectedAnimalRescuerFromUser(), 2.00);
             getAnimalFromUser();
             System.out.println("Available Amount Of Money :" + String.format("%.0f", rescuer.getAmountOfMoney()));
+
             availableRescuers.add(rescuer);
         }
     }
@@ -85,7 +87,8 @@ public class Game {
         System.out.println("Choose the animal you want to rescue (dog/cat) :");
         Scanner scanner = new Scanner(System.in);
         String animalFromUser = scanner.nextLine();
-        if (Pattern.matches("[a-zA-z]+",animalFromUser) ) {
+        if ((Pattern.matches("[a-zA-z]+",animalFromUser))&&
+                (animalFromUser.equalsIgnoreCase("Cat")|animalFromUser.equalsIgnoreCase("Dog")) ) {
             System.out.println("You rescued : " + animalFromUser);
         } else {
             System.out.println("Please choose dog/cat !");
@@ -95,7 +98,7 @@ public class Game {
     }
 
     private String getAnimalNameFromUser() {
-        System.out.println("Please enter your animal's name");
+        System.out.println("Please enter your "+getAnimalFromUser()+" 's name");
         String name;
         Scanner scanner=new Scanner(System.in);
         name=scanner.nextLine();
