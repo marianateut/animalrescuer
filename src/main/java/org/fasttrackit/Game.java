@@ -1,11 +1,14 @@
 package org.fasttrackit;
 
 
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
+
+import static java.text.MessageFormat.format;
 
 
 public class Game {
@@ -45,20 +48,20 @@ public class Game {
 
                 if (animal.getLevelOfTheFeelingOfHunger() >= 8 | animal.getMoodLevel() <= 3) {
                     winnerNotKnown = false;
-                    System.out.println("Sorry! You didn't take care of " + animal.getName() + ". You lost!");
-                } else
+                        System.out.println("Sorry! You didn't take care of " + animal.getName() + ". You lost!");
+                    } else
                     animal.positiveMod();
-                roundsNumber++;
-                animal.setLevelOfTheFeelingOfHunger(animal.getLevelOfTheFeelingOfHunger() + 1);
-                animal.setMoodLevel(animal.getMoodLevel() - 1);
-                System.out.println();
+                    roundsNumber++;
+                    animal.setLevelOfTheFeelingOfHunger(animal.getLevelOfTheFeelingOfHunger() + 1);
+                    animal.setMoodLevel(animal.getMoodLevel() - 1);
+                    System.out.println();
+                }
             }
+            if (winnerNotKnown == true)
+
+                System.out.println("Your animal is fed now and is happy, you won !");
+
         }
-        if (winnerNotKnown == true)
-
-            System.out.println("Your animal is fed now and is happy, you won !");
-
-    }
 
     private String getSelectedAnimalRescuerFromUser() {
         System.out.println("Please enter your name for your rescuer:");
@@ -129,25 +132,24 @@ public class Game {
         initFoods();
         displayAvailableFoods();
         Scanner scanner = new Scanner(System.in);
-        for (AnimalRescuer animalRescuer : availableRescuers) {
-            for (AnimalFood animalFood : availableFoods) {
-                for (Animal animal : availableAnimals) {
-                    try {
-                        int foodNumberFromUser = scanner.nextInt();
-
-                        System.out.println("Selected food :" + foodNumberFromUser);
-                        animalRescuer.feedAnimal(animal, animalFood);
-                    } catch (ArrayIndexOutOfBoundsException | InputMismatchException exception) {
-                        System.out.println("Invalid food number !");
-
-                        requireFeeding();
-                    }
+          AnimalFood animalFood = new AnimalFood();
+        for (AnimalRescuer rescuer : availableRescuers) {
+            for (Animal animal : availableAnimals) {
+                try {
+                    int foodNumberFromUser = scanner.nextInt();
+                    System.out.printf(MessageFormat.format("Selected food : {0}", foodNumberFromUser));
+                    rescuer.feedAnimal(animal, animalFood);
+                } catch (ArrayIndexOutOfBoundsException | InputMismatchException exception) {
+                    System.out.println("Invalid food number !");
+                    requireFeeding();
                 }
             }
         }
-    }
 
-    private void requireActivity() {
+        }
+
+
+    private void requireActivity()throws Exception {
         System.out.println("Your animal is unhappy, please play with him.");
         System.out.println("Choose an activity by number : ");
         initActivities();
@@ -158,7 +160,7 @@ public class Game {
                 try {
                     int activityNumberFromUser = scanner.nextInt();
                     RecreationActivity recreationActivity = availableActivities[activityNumberFromUser - 1];
-                    System.out.println("Selected activity : " + recreationActivity.getRecreationActivityName());
+                    System.out.println(format("Selected activity : {0}", activityNumberFromUser));
                     rescuer.recreationGame(recreationActivity, animal);
                 } catch (ArrayIndexOutOfBoundsException | InputMismatchException exception) {
                     System.out.println("Invalid activity");
@@ -168,8 +170,8 @@ public class Game {
         }
     }
 
-    private void initFoods() throws Exception {
-        int availfoodCount = getAvailFoodCountFromUser();
+    private void initFoods() {
+        int availfoodCount = 1;
         System.out.println("Today's available foods is.");
         for (int i = 0; i < availfoodCount; i++) {
             AnimalFood food = new AnimalFood();
@@ -182,17 +184,17 @@ public class Game {
         }
     }
 
-    private int getAvailFoodCountFromUser() throws Exception {
-        System.out.println("please enter number of availfood: ");
-        Scanner scanner = new Scanner(System.in);
-        try {
-            return scanner.nextInt();
-        } catch (InputMismatchException e) {
-            throw new Exception("You entered an invalid number.");
-        }finally {
-
-        }
-    }
+//    private int getAvailFoodCountFromUser() throws Exception {
+//        System.out.println("please enter number of availfood: ");
+//        Scanner scanner = new Scanner(System.in);
+//        try {
+//            return scanner.nextInt();
+//        } catch (InputMismatchException e) {
+//            throw new Exception("You entered an invalid number.");
+//        }finally {
+//
+//        }
+//    }
 
         private void initActivities () {
             RecreationActivity recreationActivity1 = new RecreationActivity("Run");
