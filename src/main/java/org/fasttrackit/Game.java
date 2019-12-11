@@ -28,8 +28,8 @@ public class Game {
         // String nameAnimalRescuer = getSelectedAnimalRescuerFromUser();
         initRescuer(1);
         initAnimal(1);
-        //  initFoods();
-        // initActivities();
+        initFoods();
+        initActivities();
         // displayAvailableFoods();
         // displayActivities();
 //        requireFeeding();
@@ -48,20 +48,20 @@ public class Game {
 
                 if (animal.getLevelOfTheFeelingOfHunger() >= 8 | animal.getMoodLevel() <= 3) {
                     winnerNotKnown = false;
-                        System.out.println("Sorry! You didn't take care of " + animal.getName() + ". You lost!");
-                    } else
+                    System.out.println("Sorry! You didn't take care of " + animal.getName() + ". You lost!");
+                } else
                     animal.positiveMod();
-                    roundsNumber++;
-                    animal.setLevelOfTheFeelingOfHunger(animal.getLevelOfTheFeelingOfHunger() + 1);
-                    animal.setMoodLevel(animal.getMoodLevel() - 1);
-                    System.out.println();
-                }
+                roundsNumber++;
+                animal.setLevelOfTheFeelingOfHunger(animal.getLevelOfTheFeelingOfHunger() + 1);
+                animal.setMoodLevel(animal.getMoodLevel() - 1);
+                System.out.println();
             }
-            if (winnerNotKnown == true)
-
-                System.out.println("Your animal is fed now and is happy, you won !");
-
         }
+        if (winnerNotKnown == true)
+
+            System.out.println("Your animal is fed now and is happy, you won !");
+
+    }
 
     private String getSelectedAnimalRescuerFromUser() {
         System.out.println("Please enter your name for your rescuer:");
@@ -129,30 +129,32 @@ public class Game {
     private void requireFeeding() throws Exception {
         System.out.println("Your animal is hungry, please feed him.");
         System.out.println("Choose a type of food by number : ");
-        initFoods();
+        //initFoods();
         displayAvailableFoods();
         Scanner scanner = new Scanner(System.in);
-          AnimalFood animalFood = new AnimalFood();
         for (AnimalRescuer rescuer : availableRescuers) {
-            for (Animal animal : availableAnimals) {
-                try {
-                    int foodNumberFromUser = scanner.nextInt();
-                    System.out.printf(MessageFormat.format("Selected food : {0}", foodNumberFromUser));
-                    rescuer.feedAnimal(animal, animalFood);
-                } catch (ArrayIndexOutOfBoundsException | InputMismatchException exception) {
-                    System.out.println("Invalid food number !");
-                    requireFeeding();
+                for (Animal animal : availableAnimals) {
+                    try {
+                        int foodNumberFromUser = scanner.nextInt();
+                        AnimalFood animalFood;
+                        animalFood = availableFoods.get(foodNumberFromUser - 1);
+                        System.out.println("Select food: " + foodNumberFromUser);
+
+                        rescuer.feedAnimal(animal, animalFood);
+                    } catch (Exception e) {
+                        System.out.println("Invalid foods");
+                        requireFeeding();
+                    }
                 }
             }
-        }
 
         }
 
 
-    private void requireActivity()throws Exception {
+    private void requireActivity() throws Exception {
         System.out.println("Your animal is unhappy, please play with him.");
         System.out.println("Choose an activity by number : ");
-        initActivities();
+        // initActivities();
         displayActivities();
         Scanner scanner = new Scanner(System.in);
         for (AnimalRescuer rescuer : availableRescuers) {
@@ -162,7 +164,7 @@ public class Game {
                     RecreationActivity recreationActivity = availableActivities[activityNumberFromUser - 1];
                     System.out.println(format("Selected activity : {0}", activityNumberFromUser));
                     rescuer.recreationGame(recreationActivity, animal);
-                } catch (ArrayIndexOutOfBoundsException | InputMismatchException exception) {
+                } catch (Exception exception) {
                     System.out.println("Invalid activity");
                     requireActivity();
                 }
@@ -196,35 +198,36 @@ public class Game {
 //        }
 //    }
 
-        private void initActivities () {
-            RecreationActivity recreationActivity1 = new RecreationActivity("Run");
-            recreationActivity1.setRecreationActivityName("run");
-            availableActivities[0] = recreationActivity1;
+    private void initActivities() {
+        RecreationActivity recreationActivity1 = new RecreationActivity("Run");
+        recreationActivity1.setRecreationActivityName("run");
+        availableActivities[0] = recreationActivity1;
 
-            RecreationActivity recreationActivity2 = new RecreationActivity("game ball");
-            recreationActivity2.setRecreationActivityName("game ball");
-            availableActivities[1] = recreationActivity2;
+        RecreationActivity recreationActivity2 = new RecreationActivity("game ball");
+        recreationActivity2.setRecreationActivityName("game ball");
+        availableActivities[1] = recreationActivity2;
 
-        }
+    }
 
-        private void displayAvailableFoods () {
-            int count = 1;
-            System.out.println("Available animalFoods are:");
-            for (AnimalFood animalFood : availableFoods) {
-                if (availableFoods != null) {
-                    System.out.println(count + "." + animalFood.getName());
-                    count++;
-                } else {
-                    System.out.println(count + ".I don't want to feed " + animal.getName() + " today.");
-                }
-            }
-        }
-        private void displayActivities () {
-            System.out.println("Available activities:");
-            for (int j = 0; j < availableActivities.length; j++) {
-                if (availableActivities[j] != null) {
-                    System.out.println((j + 1) + ". " + availableActivities[j].getRecreationActivityName());
-                }
+    private void displayAvailableFoods() throws Exception {
+        int count = 1;
+        System.out.println("Available animalFoods are:");
+        for (AnimalFood animalFood : availableFoods) {
+            if (availableFoods != null) {
+                System.out.println(count + "." + animalFood.getName());
+                count++;
+            } else {
+                System.out.println(count + ".I don't want to feed " + animal.getName() + " today.");
             }
         }
     }
+
+    private void displayActivities() {
+        System.out.println("Available activities:");
+        for (int j = 0; j < availableActivities.length; j++) {
+            if (availableActivities[j] != null) {
+                System.out.println((j + 1) + ". " + availableActivities[j].getRecreationActivityName());
+            }
+        }
+    }
+}

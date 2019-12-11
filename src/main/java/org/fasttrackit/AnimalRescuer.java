@@ -41,11 +41,11 @@ public class AnimalRescuer {
     public void feedAnimal (Animal animal, AnimalFood animalFood ) {
         System.out.println(name + " just gave some " + animalFood.getName() + " to "  + animal.getName());
         double hungerLevel = animal.getLevelOfTheFeelingOfHunger() - 1;
-        System.out.println(animal.getName() + " 's hunger level is : " + String.format( "%.0f", hungerLevel));
+        System.out.println(animal.getName() + " 's hunger level is : " +  hungerLevel);
 
         if (animal.getFavoritFoodNames().equals(animalFood.getName())) {
             double happyLevel = animal.getLevelOfTheFeelingOfHunger() + 1;
-            System.out.println("and happy status is : " + String.format( "%.0f", happyLevel));
+            System.out.println("and happy status is : " +  happyLevel);
         }
     }
 
